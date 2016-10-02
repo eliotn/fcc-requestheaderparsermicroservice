@@ -1,10 +1,17 @@
 var express = require('express');
+var uaparser = require('ua-parser');
+var forwarded = require('forwarded-for')
 var app = express();
 
 app.get('/*', function (req, res) {
-  res.send(JSON.stringify({"ipaddress":req.get('Remote_Addr'),
-    "language":req.get('Accept-Language'),
-    "software":req.get('User-Agent')}));
+  var uadata = uaparser.parse(req.get('user-agent'));
+  var ipaddress = forwarded(req, req.headers).ip;
+  res.send(JSON.stringify({"ipaddress":ipaddress,
+    "language":req.get('accept-language'),
+    "browser":uadata.ua.toString(),
+    "os":uadata.os.toString(),
+    "device":uadata.device.family
+  }));
 });
 
 app.listen(process.env.PORT, function () {
