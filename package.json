@@ -1,0 +1,27 @@
+{
+  "name": "fcc-requestheaderparsermicroservice",
+  "version": "1.0.0",
+  "description": "Parses a request header to tell the user their ip address, locale, and location -- second backend project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliotn/fcc-requestheaderparsermicroservice.git"
+  },
+  "keywords": [
+    "free",
+    "code",
+    "camp"
+  ],
+  "author": "Eliot J. Glairon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliotn/fcc-requestheaderparsermicroservice/issues"
+  },
+  "homepage": "https://github.com/eliotn/fcc-requestheaderparsermicroservice#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
